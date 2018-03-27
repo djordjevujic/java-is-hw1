@@ -28,6 +28,13 @@ public class Proizvod {
 		System.out.println(this.cena);
 	}
 	
+	public boolean checkId(int id) {
+		if(this.id == id)
+			return true;
+		else
+			return false;
+	}
+	
 	public int getId() {
 		return id;
 	}

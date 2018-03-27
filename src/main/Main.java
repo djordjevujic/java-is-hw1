@@ -39,10 +39,35 @@ public class Main {
 		
 		Scanner konzola = new Scanner(System.in);
 		String komanda = "";
-		System.out.println("Za izlaz iz programa unesite end)");
+		int id;
+		int newId;
+		System.out.println("Novi racun - R");
+		System.out.println("Prikaz pazara - P");
+		System.out.println("Izlaz - end");
 		
 		while(!komanda.equalsIgnoreCase("end")) {
-			
+			komanda = konzola.nextLine();
+			switch(komanda) {
+				
+				case "R":{
+					System.out.println("Dodavanje novg proizvoda - unesite ID");
+					komanda = konzola.nextLine();
+					id = Integer.parseInt(komanda);
+				/*	
+					lstSviProizvodi.forEach(pr->{
+					//	 if(pr.checkId(id)) {
+					//		trenutniRacun.dodajNaRacun(pr);
+					//	}
+						if(id == pr.getId()) {
+							trenutniRacun.dodajNaRacun(pr);
+						}
+					});
+				*/
+					int i=0;
+					for()
+					break;
+				}
+			}
 		}
 		System.out.println("Kraj programa");
 	}

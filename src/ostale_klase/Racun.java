@@ -16,7 +16,7 @@ public class Racun {
 	public void dodajNaRacun(Proizvod p) {
 		lst_proizvodi.add(p);
 	}
-
+	
 	public List<Proizvod> getNenaplaceniRacun() {
 		return lst_proizvodi;
 	}
