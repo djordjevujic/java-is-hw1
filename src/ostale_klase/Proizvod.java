@@ -5,17 +5,27 @@ public class Proizvod {
 	private String naziv;
 	private int tezina;
 	private double cena;
-	private int index;
 	
 
-	public Proizvod(String linija) {	
-		index = 0;
+	public Proizvod() {	
+
+	}
+	
+	public void setData(String linija) {	
+		int index = 0;
 		String[] podaci = linija.split(",");
 		
 		id = Integer.parseInt(podaci[index++]);
 		naziv = podaci[index++];
-		tezina = Integer.parseInt(podaci[index++]);
+		tezina = Integer.parseInt(removeLastChar(podaci[index++]));
 		cena = Double.parseDouble(podaci[index++]);
+	}
+	
+	public void printProizvod() {
+		System.out.print(this.id + " ");
+		System.out.print(this.naziv  + " ");
+		System.out.print(this.tezina + " ");
+		System.out.println(this.cena);
 	}
 	
 	public int getId() {
@@ -49,13 +59,11 @@ public class Proizvod {
 	public void setCena(double cena) {
 		this.cena = cena;
 	}
-
-	public int getIndex() {
-		return index;
-	}
-
-	public void setIndex(int index) {
-		this.index = index;
+	
+	public String removeLastChar(String str) {
+		if(str.length() > 1)
+			str = str.substring(0, str.length()-1);
+		return str;
 	}
 }
 

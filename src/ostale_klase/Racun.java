@@ -5,24 +5,24 @@ import java.util.List;
 
 public class Racun {
 	
-	private List<Proizvod> lst_racuni;
+	private List<Proizvod> lst_proizvodi;
 	private boolean naplacen = false;
 	
 	public Racun() {
-		lst_racuni = new ArrayList<Proizvod>();	
+		lst_proizvodi = new ArrayList<Proizvod>();	
 	}
 	
 	
 	public void dodajNaRacun(Proizvod p) {
-		lst_racuni.add(p);
+		lst_proizvodi.add(p);
 	}
 
 	public List<Proizvod> getNenaplaceniRacun() {
-		return lst_racuni;
+		return lst_proizvodi;
 	}
 
 	public void setNenaplaceniRacun(List<Proizvod> nenaplaceniRacun) {
-		this.lst_racuni = nenaplaceniRacun;
+		this.lst_proizvodi = nenaplaceniRacun;
 	}
 
 	public boolean isNaplacen() {
