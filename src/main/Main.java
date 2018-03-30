@@ -16,10 +16,11 @@ import ostale_klase.*;
 public class Main {
 	public static void main(String[] args) {
 		
-		int index = 0;
+		int IndexTrenutniRacun = -1;
+		int i=0;
 		
 		//String probniString = "1,Cokoladica CIPIRIPI,80g,51.99";
-		Racun trenutniRacun = new Racun();
+		List<Racun> lstRacuni = new ArrayList<Racun>();
 		List<Proizvod> lstSviProizvodi = new ArrayList<Proizvod>();
 		
 		File file = new File("/home/zoran/Desktop/proizvodi.csv");
@@ -39,8 +40,8 @@ public class Main {
 		
 		Scanner konzola = new Scanner(System.in);
 		String komanda = "";
-		int id;
-		int newId;
+		int komandaInt = 0;
+		
 		System.out.println("Novi racun - R");
 		System.out.println("Prikaz pazara - P");
 		System.out.println("Izlaz - end");
@@ -50,21 +51,25 @@ public class Main {
 			switch(komanda) {
 				
 				case "R":{
-					System.out.println("Dodavanje novg proizvoda - unesite ID");
-					komanda = konzola.nextLine();
-					id = Integer.parseInt(komanda);
-				/*	
-					lstSviProizvodi.forEach(pr->{
-					//	 if(pr.checkId(id)) {
-					//		trenutniRacun.dodajNaRacun(pr);
-					//	}
-						if(id == pr.getId()) {
-							trenutniRacun.dodajNaRacun(pr);
+					IndexTrenutniRacun++;
+					Racun tempRacun = new Racun();
+					lstRacuni.add(tempRacun);
+					do {
+						System.out.println("Dodavanje novog proizvoda - unesite ID");
+						komanda = konzola.nextLine();
+						komandaInt = Integer.parseInt(komanda);
+						if(komandaInt < 1 || komandaInt > lstSviProizvodi.get(lstSviProizvodi.size()-1).getId()) {
+							break;
 						}
-					});
-				*/
-					int i=0;
-					for()
+						for(i=0; i < lstSviProizvodi.size(); i++)
+						{
+							if(lstSviProizvodi.get(i).getId() == komandaInt) {
+								lstRacuni.get(IndexTrenutniRacun).dodajNaRacun(lstSviProizvodi.get(i));
+							}
+						}
+					}while(komandaInt > 1 || 
+							komandaInt < lstSviProizvodi.get(lstSviProizvodi.size()-1).getId());
+					lstRacuni.get(IndexTrenutniRacun).printRacun(); //test function
 					break;
 				}
 			}
