@@ -6,14 +6,25 @@ import java.util.List;
 
 public class Promet {
 	
-	private List<Racun> lst_racuni;
+	private List<Racun> lstRacuni;
+	private double ukupanPromet;
 	
 	public Promet() {
-		lst_racuni = new ArrayList<Racun>();
+		lstRacuni = new ArrayList<Racun>();
 	}
 	
 	public void dodajRacun(Racun r) {
-		if(r.isNaplacen() == false)
-			lst_racuni.add(r);
+		lstRacuni.add(r);
+	}
+	
+	public void printPromet() {
+		for(int i=0; i<lstRacuni.size(); i++) {
+			System.out.println();
+			System.out.println("Racun " + (i+1) + ":");
+			lstRacuni.get(i).printRacun();
+			
+			ukupanPromet += lstRacuni.get(i).vrednostRacuna();
+			System.out.println("Ukupan promet: " + ukupanPromet);
+		}
 	}
 }
