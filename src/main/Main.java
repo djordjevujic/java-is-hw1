@@ -24,7 +24,7 @@ public class Main {
 		List<Proizvod> lstSviProizvodi = new ArrayList<Proizvod>();
 		
 		Promet trenutniPromet = new Promet();
-		File file = new File("/home/zoran/Desktop/proizvodi.csv");
+		File file = new File("/home/djordje/Desktop/proizvodi.csv");
 		
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(file));
@@ -69,6 +69,9 @@ public class Main {
 					lstRacuni.add(tempRacun);
 					do {
 						System.out.println("Dodavanje novog proizvoda - unesite ID");
+						System.out.println("Naplata racuna - N");
+						System.out.println("Odustani od racuna - O");
+						System.out.print("> ");
 						//zastita unosa intedzera
 						do {	
 							inputSuccess = true;
@@ -106,11 +109,17 @@ public class Main {
 						lstRacuni.get(IndexTrenutniRacun).printRacun(); //test function
 						trenutniPromet.dodajRacun(lstRacuni.get(IndexTrenutniRacun));
 						IndexTrenutniRacun++;
+						System.out.println("Novi racun - R");
+						System.out.println("Prikaz pazara - P");
+						System.out.println("Izlaz - end");
 					}
 					
 					if(komanda.equalsIgnoreCase("o")) {
 						lstRacuni.get(IndexTrenutniRacun).obrisiRacune();
 						lstRacuni.get(IndexTrenutniRacun).printRacun(); //test function
+						System.out.println("Novi racun - R");
+						System.out.println("Prikaz pazara - P");
+						System.out.println("Izlaz - end");
 					}
 					
 					break;

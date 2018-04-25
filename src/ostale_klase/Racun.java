@@ -27,6 +27,7 @@ public class Racun {
 	}
 	
 	public void printRacun() {
+		System.out.println("Napravljen racun: ");
 		for(int i=0; i<lst_proizvodi.size(); i++) {
 			lst_proizvodi.get(i).printProizvod();
 		}
